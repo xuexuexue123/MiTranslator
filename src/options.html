@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MiTranslator 设置</title>
+    <style>
+      body {
+        margin: 0;
+        background: #f8f9fa;
+        color: #202124;
+        font: 14px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Noto Sans SC", sans-serif;
+      }
+      main {
+        max-width: 440px;
+        margin: 48px auto;
+        padding: 0 20px;
+      }
+      h1 {
+        margin: 0 0 8px;
+        font-size: 22px;
+        font-weight: 500;
+      }
+      p {
+        margin: 0 0 24px;
+        color: #5f6368;
+      }
+      label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 500;
+      }
+      select {
+        width: 100%;
+        height: 40px;
+        box-sizing: border-box;
+        padding: 0 12px;
+        border: 1px solid #dadce0;
+        border-radius: 8px;
+        background: #fff;
+        color: inherit;
+        font: inherit;
+      }
+      .row {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-top: 16px;
+      }
+      button {
+        height: 36px;
+        padding: 0 16px;
+        border: 0;
+        border-radius: 18px;
+        background: #1a73e8;
+        color: #fff;
+        font: inherit;
+        cursor: pointer;
+      }
+      button:hover {
+        background: #1765cc;
+      }
+      #saved {
+        color: #188038;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>默认翻译语言</h1>
+      <p>右键选择 Translate this page 时，页面会翻译成这里选的语言。已经译过的页面需要先显示原文，再翻译一次。</p>
+      <form>
+        <label for="target-lang">翻译为</label>
+        <select id="target-lang"></select>
+        <div class="row">
+          <button type="submit">保存</button>
+          <span id="saved" hidden>已保存</span>
+        </div>
+      </form>
+    </main>
+    <script src="options.js"></script>
+  </body>
+</html>

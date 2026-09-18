@@ -1,0 +1,39 @@
+{
+  "manifest_version": 3,
+  "name": "MiTranslator",
+  "version": "0.1.0",
+  "description": "右键选择 Translate this page，把整页翻译成你设置的语言。默认简体中文，不经过 Google。",
+  "permissions": ["contextMenus", "scripting", "storage", "webNavigation"],
+  "host_permissions": ["<all_urls>", "https://transmart.qq.com/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Translate this page",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "all_frames": true,
+      "match_about_blank": true,
+      "run_at": "document_idle"
+    }
+  ]
+}

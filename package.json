@@ -1,0 +1,12 @@
+{
+  "name": "mitranslator",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "bun build src/background.js --outfile extension/background.js --target browser --format iife && bun build src/content.js --outfile extension/content.js --target browser --format iife && bun build src/options.js --outfile extension/options.js --target browser --format iife && cp src/options.html extension/options.html",
+    "test": "bun test"
+  },
+  "devDependencies": {
+    "linkedom": "^0.18.12"
+  }
+}
